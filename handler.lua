@@ -6,7 +6,7 @@ SampleHandler.VERSION = "1.0.0"
 
 -- constructor
 function SampleHandler:new()
- SampleHandler.super.new(self,"Sample-Handler")
+ SampleHandler.super.new(self,"sample_plugin")
 end
 
 --

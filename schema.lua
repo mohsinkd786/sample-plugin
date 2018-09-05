@@ -1,7 +1,7 @@
 return {
- no_consumer true,
+ no_consumer = false,
  field = {
-  user = { type="string", required = true, default = { "username"} },
+  user = { type="string", required = true, default = "" },
   token = { type="string", required = true } 
  }
 }
