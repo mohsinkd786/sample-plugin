@@ -1,6 +1,9 @@
 local BasePlugin = require ("kong.plugins.base_plugin")
 local SampleHandler = BasePlugin:extend()
 
+SampleHandler.PRIORITY = 100
+SampleHandler.VERSION = "1.0.0"
+
 -- constructor
 function SampleHandler:new()
  SampleHandler.super.new(self,"Sample-Handler")
