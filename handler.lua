@@ -1,6 +1,8 @@
 local BasePlugin = require ("kong.plugins.base_plugin")
 local SampleHandler = BasePlugin:extend()
 
+local _access = require "kong.plugins.sample-plugin.access"
+
 SampleHandler.PRIORITY = 100
 SampleHandler.VERSION = "1.0.0"
 
@@ -33,6 +35,9 @@ end
 
 function SampleHandler:access(config)
  SampleHandler.super.access(self)
+
+ _access.run(config)  -- calling the custom function to verify the details
+
 end
 
 function SampleHandler:log(config)

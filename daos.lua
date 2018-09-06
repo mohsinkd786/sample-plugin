@@ -1,11 +1,12 @@
+local utils = require "kong.tools.utils"
 local SCHEMA = {
 		primary_key = { "id" },
 		table = "sample_plugin",
+		cache_key = { "key" },
 		fields = {
 				id = { type = "id" , dao_insert_value = true },
 				consumer_id = { type = "id" , required = true , foreign = "consumers:id" },
-				user = { type = "string" , dao_insert_value = true },
-				token = { type = "string" , dao_insert_value = true},
+				key = { type = "string" , required = false, unique = true , default = utils.random_string },
 				created_at = { type ="timestamp" , immutable = true, dao_insert_value = true }	
 			},
 }

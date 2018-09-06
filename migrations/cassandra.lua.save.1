@@ -1,0 +1,19 @@
+local plugin_config = require ("kong.dao.migrations.helpers").plugin_config_iterator
+
+return {
+	{
+		name = "kong_sample_custom_plugin",
+		up =[[
+			CREATE TABLE IF NOT EXISTS sample_custom_plugin(
+				id uuid,
+				consumer_id uuid,
+				
+			);
+		]],
+		down = [[
+
+		]]
+	}
+}
+
+

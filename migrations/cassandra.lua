@@ -7,17 +7,16 @@ return {
 			CREATE TABLE IF NOT EXISTS sample_plugin(
 				id uuid,
 				consumer_id uuid,
-				user text,
-				token text,
+				key text,
 				created_at timestamp,
 				PRIMARY KEY(id)
 			);
-			CREATE INDEX IF NOT EXISTS sample_plugin_user ON sample_plugin(user);
+			CREATE INDEX IF NOT EXISTS sample_plugin_key ON sample_plugin(key);
 			CREATE INDEX IF NOT EXISTS sample_plugin_token ON sample_plugin(token); 
 			]],
 		down = [[   -- dissolve the database schema in cassandra  cmd : with kong migrations down
 				DROP TABLE IF EXISTS sample_plugin;
-				DROP INDEX IF EXISTS sample_plugin_user;
+				DROP INDEX IF EXISTS sample_plugin_key;
 				DROP INDEX IF EXISTS sample_plugin_token;
 			]]
 	},
