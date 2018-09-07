@@ -21,6 +21,7 @@ build = {
 	modules = {
 		[ "kong.plugins.sample_plugin.handler" ] = "handler.lua",
 		[ "kong.plugins.sample_plugin.schema" ] = "schema.lua",
-		[ "kong.plugins.sample_plugin.dao" ] = daos.lua
+		[ "kong.plugins.sample_plugin.dao" ] = daos.lua,
+		[ "kong.plugins.sample_plugin.access" ] = access.lua,
 	}
 }
